@@ -1,0 +1,32 @@
+{
+  "name": "react-fast-refresh-rendertopipeablestream",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node main.js",
+    "dev": "npm run build-dev-server & NODE_ENV=development npm start",
+    "build": "NODE_ENV=production APP_ENV=browser webpack --config webpack.config.js && NODE_ENV=production APP_ENV=server webpack --config webpack.config.js",
+    "build-dev-server": "NODE_ENV=development APP_ENV=server webpack --stats errors-warnings -w --config webpack.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "react": "^18.0.0-rc.3",
+    "react-dom": "^18.0.0-rc.3",
+    "react-router-dom": "^6.2.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.4",
+    "babel-loader": "^8.2.4",
+    "react-refresh": "^0.11.0",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-middleware": "^5.3.1",
+    "webpack-hot-middleware": "^2.25.1"
+  }
+}
