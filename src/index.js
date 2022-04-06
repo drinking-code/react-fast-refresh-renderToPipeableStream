@@ -2,7 +2,7 @@ import React from 'react'
 import * as ReactDOMClient from 'react-dom/client'
 import {BrowserRouter} from 'react-router-dom'
 
-import Html from './Html'
+import App from './App'
 
-const routedApp = <BrowserRouter><Html/></BrowserRouter>
-const root = ReactDOMClient.hydrateRoot(document, routedApp)
+const routedApp = <BrowserRouter><App/></BrowserRouter>
+const root = ReactDOMClient.hydrateRoot(document.querySelector('#root'), routedApp)
