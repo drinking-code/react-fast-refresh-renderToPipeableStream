@@ -14,17 +14,9 @@ export default function serverEntry({url}, res) {
     let resolve
     const promise = new Promise(r => resolve = r)
 
-    const {pipe, abort} = ReactDOMServer.renderToPipeableStream(jsx, {
-        onShellReady() {
-            res.statusCode = 200
-            res.setHeader('Content-type', 'text/html')
-            pipe(res)
-            resolve()
-        },
-        onError(err) {
-            console.error(err)
-        }
-    })
+    const html = ReactDOMServer.renderToString(jsx)
+    res.send(html)
+    resolve()
 
     return promise
 }
